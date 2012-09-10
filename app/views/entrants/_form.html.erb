@@ -1,0 +1,65 @@
+<%= form_for(@entrant) do |f| %>
+  <% if @entrant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entrant.errors.count, "error") %> prohibited this entrant from being saved:</h2>
+
+      <ul>
+      <% @entrant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name_first %><br />
+    <%= f.text_field :name_first %>
+  </div>
+  <div class="field">
+    <%= f.label :name_middle %><br />
+    <%= f.text_field :name_middle %>
+  </div>
+  <div class="field">
+    <%= f.label :name_last %><br />
+    <%= f.text_field :name_last %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line_1 %><br />
+    <%= f.text_field :address_line_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line_2 %><br />
+    <%= f.text_field :address_line_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_city %><br />
+    <%= f.text_field :address_city %>
+  </div>
+  <div class="field">
+    <%= f.label :address_state %><br />
+    <%= f.text_field :address_state %>
+  </div>
+  <div class="field">
+    <%= f.label :address_zip_code %><br />
+    <%= f.text_field :address_zip_code %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_primary %><br />
+    <%= f.text_field :phone_primary %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_alternate %><br />
+    <%= f.text_field :phone_alternate %>
+  </div>
+  <div class="field">
+    <%= f.label :email_address %><br />
+    <%= f.text_field :email_address %>
+  </div>
+  <div class="field">
+    <%= f.label :for_year %><br />
+    <%= f.text_field :for_year %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

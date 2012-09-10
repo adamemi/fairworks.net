@@ -1,0 +1,45 @@
+<h1>Listing entrants</h1>
+
+<table>
+  <tr>
+    <th>Name first</th>
+    <th>Name middle</th>
+    <th>Name last</th>
+    <th>Address line 1</th>
+    <th>Address line 2</th>
+    <th>Address city</th>
+    <th>Address state</th>
+    <th>Address zip code</th>
+    <th>Phone primary</th>
+    <th>Phone alternate</th>
+    <th>Email address</th>
+    <th>For year</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @entrants.each do |entrant| %>
+  <tr>
+    <td><%= entrant.name_first %></td>
+    <td><%= entrant.name_middle %></td>
+    <td><%= entrant.name_last %></td>
+    <td><%= entrant.address_line_1 %></td>
+    <td><%= entrant.address_line_2 %></td>
+    <td><%= entrant.address_city %></td>
+    <td><%= entrant.address_state %></td>
+    <td><%= entrant.address_zip_code %></td>
+    <td><%= entrant.phone_primary %></td>
+    <td><%= entrant.phone_alternate %></td>
+    <td><%= entrant.email_address %></td>
+    <td><%= entrant.for_year %></td>
+    <td><%= link_to 'Show', entrant %></td>
+    <td><%= link_to 'Edit', edit_entrant_path(entrant) %></td>
+    <td><%= link_to 'Destroy', entrant, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entrant', new_entrant_path %>

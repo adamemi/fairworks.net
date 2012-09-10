@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  entrant_id: 1
+  category_id: 1
+  prize_id: 1
+
+two:
+  entrant_id: 1
+  category_id: 1
+  prize_id: 1
