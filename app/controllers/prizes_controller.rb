@@ -13,12 +13,7 @@ class PrizesController < ApplicationController
   # GET /prizes/1
   # GET /prizes/1.json
   def show
-    @prize = Prize.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @prize }
-    end
+    redirect_to :action => :edit
   end
 
   # GET /prizes/new

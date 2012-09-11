@@ -1,0 +1,24 @@
+%h2
+  Login to Fairworks
+
+%hr/
+
+= form_tag(sessions_path, :class => 'form-horizontal') do
+
+  -# USERNAME
+  .control-group
+    = label_tag :username, "Username", :class => 'control-label'
+    .controls
+      = text_field_tag :username, nil, :class => 'first'
+
+  -# PASSWORD
+  .control-group
+    = label_tag :password, "Password", :class => 'control-label'
+    .controls
+      = password_field_tag :password
+
+
+  .form-actions
+    = submit_tag "Save", :class => 'btn btn-primary'
+    %button{ :type => 'reset', :class => 'btn'}
+      Clear

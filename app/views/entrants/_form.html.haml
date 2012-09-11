@@ -1,0 +1,82 @@
+= form_for(@entrant, :html => { :class => 'form-horizontal' }) do |f|
+  
+  - if @entrant.errors.any?
+    .alert{ :class => 'alert-danger' }
+      %strong
+        Could Not Save
+      - @entrant.errors.full_messages.each do |msg|
+        = msg
+
+  .row
+    .span6
+
+      -# NAME_FIRST
+      .control-group
+        = f.label :name_first, "First Name", :class => 'control-label'
+        .controls
+          = f.text_field :name_first, :class => 'first'
+
+      -# NAME_MIDDLE
+      .control-group
+        = f.label :name_middle, "Middle Name", :class => 'control-label'
+        .controls
+          = f.text_field :name_middle
+
+      -# NAME_LAST
+      .control-group
+        = f.label :name_last, "Last Name", :class => 'control-label'
+        .controls
+          = f.text_field :name_last
+
+      .control-group
+        = f.label :phone_primary, "Phone Number (primary)", :class => 'control-label'
+        .controls
+          = f.text_field :phone_primary, :class => 'phone_number'
+
+      .control-group
+        = f.label :phone_alternate, "Phone Number (alternate)", :class => 'control-label'
+        .controls
+          = f.text_field :phone_alternate
+
+      .control-group
+        = f.label :email_address, "E-mail Address", :class => 'control-label'
+        .controls
+          = f.email_field :email_address
+
+    .span6
+
+      -# ADDRESS_LINE_1
+      .control-group
+        = f.label :address_line_1, "Line 1", :class => 'control-label'
+        .controls
+          = f.text_field :address_line_1
+
+      -# ADDRESS_LINE_2
+      .control-group
+        = f.label :address_line_2, "Line 2", :class => 'control-label'
+        .controls
+          = f.text_field :address_line_2
+
+      -# ADDRESS_CITY
+      .control-group
+        = f.label :address_city, "City", :class => 'control-label'
+        .controls
+          = f.text_field :address_city
+
+      -# ADDRESS_STATE
+      .control-group
+        = f.label :address_state, "State", :class => 'control-label'
+        .controls
+          = f.text_field :address_state
+
+      -# ADDRESS_ZIP_CODE
+      .control-group
+        = f.label :address_zip_code, "Zip Code", :class => 'control-label'
+        .controls
+          = f.text_field :address_zip_code
+
+  .form-actions
+    = f.submit "Save", :class => 'btn btn-primary'
+    %button{ :type => 'reset', :class => 'btn'}
+      Clear
+    = link_to "Cancel", entrants_path, :class => 'btn'

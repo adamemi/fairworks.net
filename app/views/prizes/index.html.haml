@@ -1,0 +1,17 @@
+%h2
+  Prizes
+
+.well{ :class => 'well-small' }
+  = link_to "New Prize", new_prize_path, :class => 'btn btn-primary'
+
+%table{ :class => 'table table-condensed table-striped table-bordered table-clickable' }
+  %tr
+    %th Name
+    %th Amount
+
+  - @prizes.each do |prize|
+    %tr{ :onclick => "location.href='#{ edit_prize_path(prize) }'" }
+      %td
+        = prize.name
+      %td
+        = prize.amount

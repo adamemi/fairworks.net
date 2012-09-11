@@ -4,4 +4,8 @@ class Category < ActiveRecord::Base
 
   # relationships
   belongs_to :department
+
+  def name_with_department
+    "#{number} - #{department.name} : #{name}"
+  end
 end

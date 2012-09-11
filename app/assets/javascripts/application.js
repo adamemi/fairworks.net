@@ -13,3 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+  
+  // Focus on the first text field of every form
+  // ------------------------------------------------------------------
+  $(".first").focus();
+
+  // Mask these inputs
+  // ------------------------------------------------------------------
+  $('input.phone_number').inputmask("mask", {"mask": "(999) 999-9999"});
+  
+});

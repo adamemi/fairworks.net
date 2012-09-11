@@ -1,0 +1,17 @@
+%h2
+  Departments
+
+.well{ :class => 'well-small' }
+  = link_to "New Department", new_department_path, :class => 'btn btn-primary'
+
+%table{ :class => 'table table-condensed table-striped table-bordered table-clickable' }
+  %tr
+    %th Name
+    %th Division
+
+  - @departments.each do |department|
+    %tr{ :onclick => "location.href='#{ edit_department_path(department) }'" }
+      %td
+        = department.name
+      %td
+        = department.division.name

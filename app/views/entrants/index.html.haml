@@ -1,0 +1,29 @@
+%h2
+  Entrants
+
+.well{ :class => 'well-small' }
+  = link_to "New Entrant", new_entrant_path, :class => 'btn btn-primary'
+
+%table{ :class => 'table table-condensed table-striped table-bordered table-clickable' }
+  %tr
+    %th First
+    %th Middle
+    %th Last
+    %th Address
+    %th City
+    %th Phone
+
+  - @entrants.each do |entrant|
+    %tr{ :onclick => "location.href='#{ edit_entrant_path(entrant) }'" }
+      %td
+        = entrant.name_first
+      %td
+        = entrant.name_middle
+      %td
+        = entrant.name_last
+      %td
+        = entrant.address_line_1
+      %td
+        = entrant.address_city
+      %td
+        = entrant.phone_primary

@@ -1,0 +1,32 @@
+= form_for(@win, :html => { :class => 'form-horizontal' }) do |f|
+  
+  - if @win.errors.any?
+    .alert{ :class => 'alert-danger' }
+      %strong
+        Could Not Save
+      - @win.errors.full_messages.each do |msg|
+        = msg
+
+  -# ENTRANT
+  .control-group
+    = f.label :entrant_id, "Entrant", :class => 'control-label'
+    .controls
+      = f.collection_select :entrant_id, Entrant.all, :id, :full_name, :class => 'first'
+
+  -# CATEGORY
+  .control-group
+    = f.label :category_id, "Category", :class => 'control-label'
+    .controls
+      = f.collection_select :category_id, Category.all, :id, :name
+
+  -# PRIZE
+  .control-group
+    = f.label :prize_id, "Prize", :class => 'control-label'
+    .controls
+      = f.collection_select :prize_id, Prize.all, :id, :name
+
+  .form-actions
+    = f.submit "Save", :class => 'btn btn-primary'
+    %button{ :type => 'reset', :class => 'btn'}
+      Clear
+    = link_to "Cancel", prizes_path, :class => 'btn'

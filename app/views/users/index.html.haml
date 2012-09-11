@@ -1,0 +1,17 @@
+%h2
+  Users
+
+.well{ :class => 'well-small' }
+  = link_to "New User", new_user_path, :class => 'btn btn-primary'
+
+%table{ :class => 'table table-condensed table-striped table-bordered table-clickable' }
+  %tr
+    %th Username
+    %th Full Name
+
+  - @users.each do |user|
+    %tr{ :onclick => "location.href='#{ edit_user_path(user) }'" }
+      %td
+        = user.username
+      %td
+        = user.full_name

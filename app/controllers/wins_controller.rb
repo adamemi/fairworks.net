@@ -13,12 +13,7 @@ class WinsController < ApplicationController
   # GET /wins/1
   # GET /wins/1.json
   def show
-    @win = Win.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @win }
-    end
+    redirect_to :action => :edit
   end
 
   # GET /wins/new

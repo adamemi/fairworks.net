@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+div#site_container { margin-top: 50px; }
+
+div.well-small { padding: 10px; }
+
+table.table-clickable tr:hover { cursor: pointer; }

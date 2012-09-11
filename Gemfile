@@ -1,11 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'activerecord-jdbcsqlite3-adapter'
+gem 'rails', '~> 3.2.8'
 
 gem 'jruby-openssl'
 gem 'json'
@@ -22,19 +17,19 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'activerecord-jdbcsqlite3-adapter'
+  gem 'bcrypt-ruby' # To use ActiveModel has_secure_password
+  gem 'capistrano'
+end
+
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'haml'
+gem 'linguistics'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+# currency
+gem 'money'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
+# pdf (check) generation
+gem 'prawn'

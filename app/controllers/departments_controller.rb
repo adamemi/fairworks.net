@@ -13,12 +13,7 @@ class DepartmentsController < ApplicationController
   # GET /departments/1
   # GET /departments/1.json
   def show
-    @department = Department.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @department }
-    end
+    redirect_to :action => :edit
   end
 
   # GET /departments/new

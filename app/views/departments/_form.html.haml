@@ -1,0 +1,26 @@
+= form_for(@department, :html => { :class => 'form-horizontal' }) do |f|
+  
+  - if @department.errors.any?
+    .alert{ :class => 'alert-danger' }
+      %strong
+        Could Not Save
+      - @department.errors.full_messages.each do |msg|
+        = msg
+
+  -# NAME
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'first'
+
+  -# DIVISION
+  .control-group
+    = f.label :division_id, "Division", :class => 'control-label'
+    .controls
+      = f.collection_select :division_id, Division.all, :id, :name
+
+  .form-actions
+    = f.submit "Save", :class => 'btn btn-primary'
+    %button{ :type => 'reset', :class => 'btn'}
+      Clear
+    = link_to "Cancel", departments_path, :class => 'btn'

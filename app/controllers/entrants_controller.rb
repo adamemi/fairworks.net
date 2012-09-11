@@ -13,12 +13,7 @@ class EntrantsController < ApplicationController
   # GET /entrants/1
   # GET /entrants/1.json
   def show
-    @entrant = Entrant.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @entrant }
-    end
+    redirect_to :action => :edit
   end
 
   # GET /entrants/new
