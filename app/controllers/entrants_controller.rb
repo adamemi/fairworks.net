@@ -39,7 +39,13 @@ class EntrantsController < ApplicationController
 
     respond_to do |format|
       if @entrant.save
-        format.html { redirect_to edit_entrant_path(@entrant), :notice => 'Entrant was successfully created.' }
+        if params[:redirect_to_new]
+          url = url_for(:action => :new, :redirect_to_new => true)
+        else
+          url = edit_entrant_path(@entrant)
+        end
+
+        format.html { redirect_to url, :notice => 'Entrant was successfully created.' }
         format.json { render :json => @entrant, :status => :created, :location => @entrant }
       else
         format.html { render :action => "new" }

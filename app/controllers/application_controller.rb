@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   
   before_filter :authenticate_user!
-  before_filter :verify_root_exists!
+  #before_filter :verify_root_exists!
 
   private
 

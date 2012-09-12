@@ -81,6 +81,13 @@
         .controls
           = f.text_field :address_zip_code
 
+      -# REDIRECT TO NEW
+      .control-group
+        .controls
+          %label{ :for => 'redirect_to_new', :class => 'checkbox' }
+            = check_box_tag :redirect_to_new, 'true', ("checked" if params[:redirect_to_new] == "true")
+            Redirect to New?
+
   .form-actions
     = f.submit "Save", :class => 'btn btn-primary'
     %button{ :type => 'reset', :class => 'btn'}
