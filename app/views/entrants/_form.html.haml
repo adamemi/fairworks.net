@@ -43,6 +43,12 @@
         .controls
           = f.email_field :email_address
 
+      -# FOR_YEAR
+      .control-group
+        = f.label :for_year, "For Year", :class => 'control-label'
+        .controls
+          = f.text_field :for_year, :value => "2012"
+
     .span6
 
       -# ADDRESS_LINE_1

@@ -24,12 +24,13 @@ gem 'linguistics'
 
 group :development do
   gem 'activerecord-jdbcsqlite3-adapter'
-  gem 'bcrypt-ruby' # To use ActiveModel has_secure_password
 end
 
 group :production do
   gem 'activerecord-jdbcmssql-adapter'
 end
+
+gem 'bcrypt-ruby' # To use ActiveModel has_secure_password
 
 # paging
 gem 'kaminari'
