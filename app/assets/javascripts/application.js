@@ -15,6 +15,9 @@
 //= require_tree .
 
 $(document).ready(function() {
+
+  // Disable autocomplete for security and cleanliness
+  $(document).ready(function(){$("input").attr("autocomplete","off");});
   
   // Focus on the first text field of every form
   // ------------------------------------------------------------------
