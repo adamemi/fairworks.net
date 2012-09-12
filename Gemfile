@@ -25,7 +25,6 @@ gem 'linguistics'
 group :development do
   gem 'activerecord-jdbcsqlite3-adapter'
   gem 'bcrypt-ruby' # To use ActiveModel has_secure_password
-  gem 'capistrano'
 end
 
 group :production do
@@ -40,3 +39,5 @@ gem 'money'
 
 # pdf (check) generation
 gem 'prawn'
+
+gem 'capistrano'
