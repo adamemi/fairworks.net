@@ -39,7 +39,7 @@ class DivisionsController < ApplicationController
 
     respond_to do |format|
       if @division.save
-        format.html { redirect_to @division, :notice => 'Division was successfully created.' }
+        format.html { redirect_to edit_division_path(@division), :notice => 'Division was successfully created.' }
         format.json { render :json => @division, :status => :created, :location => @division }
       else
         format.html { render :action => "new" }
@@ -55,7 +55,7 @@ class DivisionsController < ApplicationController
 
     respond_to do |format|
       if @division.update_attributes(params[:division])
-        format.html { redirect_to @division, :notice => 'Division was successfully updated.' }
+        format.html { redirect_to edit_division_path(@division), :notice => 'Division was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }

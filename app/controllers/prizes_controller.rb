@@ -39,7 +39,7 @@ class PrizesController < ApplicationController
 
     respond_to do |format|
       if @prize.save
-        format.html { redirect_to @prize, :notice => 'Prize was successfully created.' }
+        format.html { redirect_to edit_prize_path(@prize), :notice => 'Prize was successfully created.' }
         format.json { render :json => @prize, :status => :created, :location => @prize }
       else
         format.html { render :action => "new" }
@@ -55,7 +55,7 @@ class PrizesController < ApplicationController
 
     respond_to do |format|
       if @prize.update_attributes(params[:prize])
-        format.html { redirect_to @prize, :notice => 'Prize was successfully updated.' }
+        format.html { redirect_to edit_prize_path(@prize), :notice => 'Prize was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
