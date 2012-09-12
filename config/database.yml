@@ -1,9 +1,3 @@
-# SQLite version 3.x
-#   gem 'activerecord-jdbcsqlite3-adapter'
-#
-# Configure Using Gemfile
-# gem 'activerecord-jdbcsqlite3-adapter'
-#
 development:
   adapter: sqlite3
   database: db/development.sqlite3
@@ -16,5 +10,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: jdbcmssql
+  database: fairworks_prd
+  host: emi-sql-01.emiimaging.com
+  username: fairworks
+  password: Emi@2012
+  pool: 10

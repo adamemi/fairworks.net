@@ -1,0 +1,7 @@
+web:
+  context: /
+  host: www.fairworks.net
+
+ruby:
+  version: 1.8
+  #compile_mode: force

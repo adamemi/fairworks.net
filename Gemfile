@@ -1,21 +1,26 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '~> 3.2.8'
 
+# torquebox
+gem "torquebox", "2.0.3"
+gem "torquebox-rake-support", "2.0.3"
+gem "torquebox-capistrano-support", "2.0.3"
 gem 'jruby-openssl'
-gem 'json'
 
-# Gems used only for assets and not required
-# in production environments by default.
+# assets
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'therubyrhino'
-
-  gem 'uglifier', '>= 1.0.3'
+  
+  gem 'uglifier'
+  gem 'json'
+  gem 'jquery-rails'
 end
+
+gem 'haml'
+gem 'linguistics'
 
 group :development do
   gem 'activerecord-jdbcsqlite3-adapter'
@@ -23,10 +28,12 @@ group :development do
   gem 'capistrano'
 end
 
-gem 'jquery-rails'
+group :production do
+  gem 'activerecord-jdbcmssql-adapter'
+end
 
-gem 'haml'
-gem 'linguistics'
+# paging
+gem 'kaminari'
 
 # currency
 gem 'money'
