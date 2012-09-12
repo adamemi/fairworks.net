@@ -4,13 +4,15 @@ FairworksCom::Application.routes.draw do
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
 
+  match 'entrants/search' => "entrants#search"
+  resources :entrants
+
   resources :reports, :only => [:index]
   match 'reports/checks' => 'reports#checks'
 
   resources :users
   resources :wins
   resources :prizes
-  resources :entrants
   resources :categories
   resources :departments
   resources :divisions

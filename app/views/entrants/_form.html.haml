@@ -10,11 +10,21 @@
   .row
     .span6
 
+      -# only show the autocomplete for entrant_previous_year
+      -# if this is the new entrant form
+      - if @entrant.id.nil?
+      
+        -# AUTOCOMPLETE FOR ENTRANTS IN PREVIOUS YEAR
+        .control-group
+          = label_tag :entrant_previous_year, "Entrant (Previous Year)", :class => 'control-label'
+          .controls
+            <input type='text' id="entrant_previous_year" class='first' />
+
       -# NAME_FIRST
       .control-group
         = f.label :name_first, "First Name", :class => 'control-label'
         .controls
-          = f.text_field :name_first, :class => 'first'
+          = f.text_field :name_first
 
       -# NAME_MIDDLE
       .control-group
@@ -47,7 +57,7 @@
       .control-group
         = f.label :for_year, "For Year", :class => 'control-label'
         .controls
-          = f.text_field :for_year, :value => "2012"
+          = f.text_field :for_year
 
     .span6
 

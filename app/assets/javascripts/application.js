@@ -24,4 +24,28 @@ $(document).ready(function() {
   // ------------------------------------------------------------------
   $('input.phone_number').inputmask("mask", {"mask": "(999) 999-9999"});
   
+  // Typeahead for entrant_previous_year
+  // ------------------------------------------------------------------
+  $('#entrant_previous_year').typeahead({
+    source: function(typeahead, query) {
+      $.getJSON('/entrants/search?query=' + query, function(data) {
+        typeahead.process(data);
+      });
+    },
+    property: "full_name",
+    onselect: function(obj) {
+      // populate the text fields with this contact
+      populateFields(obj);
+    },
+    items: 15
+  });
+
+  // Auto-fill from selection on entrant_previous_year
+  // ------------------------------------------------------------------
+  function populateFields(entrant) {
+    
+    $('#entrant_name_first').val(entrant.name_first);
+    $('#entrant_name_middle').val(entrant.name_middle);
+    $('#entrant_name_last').val(entrant.name_last);
+  }
 });

@@ -10,6 +10,17 @@ class EntrantsController < ApplicationController
     end
   end
 
+  def search
+    @query = params[:query]
+    @entrants = Entrant.where("for_year = '2011' AND (name_first LIKE :search OR name_last LIKE :search)", :search => "%#{params[:query]}%").limit(15)
+
+    respond_to do |format|
+      format.json do
+        render :json => @entrants.to_json( :methods => [ :full_name ] )
+      end
+    end
+  end
+
   # GET /entrants/1
   # GET /entrants/1.json
   def show
@@ -20,6 +31,7 @@ class EntrantsController < ApplicationController
   # GET /entrants/new.json
   def new
     @entrant = Entrant.new
+    @entrant.for_year = "2012"
 
     respond_to do |format|
       format.html # new.html.erb
