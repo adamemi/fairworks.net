@@ -3,9 +3,9 @@ source 'http://rubygems.org'
 gem 'rails', '~> 3.2.8'
 
 # torquebox
-gem "torquebox", "2.0.3"
-gem "torquebox-rake-support", "2.0.3"
-gem "torquebox-capistrano-support", "2.0.3"
+gem "torquebox", "2.1.1"
+gem "torquebox-rake-support", "2.1.1"
+gem "torquebox-capistrano-support", "2.1.1"
 gem 'jruby-openssl'
 
 # assets
