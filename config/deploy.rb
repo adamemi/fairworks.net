@@ -15,9 +15,9 @@ set :user,              "emi" # your server username
 set :deploy_to,         "/home/emi/webapps/#{application}"
 set :torquebox_home,    "/home/emi/torquebox-current"
 
-role :web,              "192.168.100.33" # location of the web server
-role :app,              "192.168.100.33" # may be the same as your 'Web' server
-role :db,               "192.168.100.33", :primary => true # where Rails migrations will run, NOT the location of the db
+role :web,              "192.168.100.21" # location of the web server
+role :app,              "192.168.100.21" # may be the same as your 'Web' server
+role :db,               "192.168.100.21", :primary => true # where Rails migrations will run, NOT the location of the db
 
 # necesary or else a '/usr/bin/env: jruby: No such file or directory' will occur
 set :default_environment, {

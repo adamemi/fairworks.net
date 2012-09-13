@@ -15,4 +15,4 @@ production:
   host: emi-sql-01.emiimaging.com
   username: fairworks
   password: Emi@2012
-  pool: 10
+  pool: 100
