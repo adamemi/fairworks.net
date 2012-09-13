@@ -17,7 +17,7 @@
   .control-group
     = f.label :entrant_id, "Entrant", :class => 'control-label'
     .controls
-      = f.collection_select :entrant_id, Entrant.order('id'), :id, :full_name
+      = f.collection_select :entrant_id, Entrant.where(:for_year => 2012).order('id'), :id, :full_name
 
   -# PRIZE
   .control-group
