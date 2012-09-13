@@ -6,6 +6,7 @@
 
 %table{ :class => 'table table-condensed table-striped table-bordered table-clickable' }
   %tr
+    %th ID
     %th First
     %th Middle
     %th Last
@@ -15,6 +16,8 @@
 
   - @entrants.each do |entrant|
     %tr{ :onclick => "location.href='#{ edit_entrant_path(entrant) }'" }
+      %td
+        = entrant.id
       %td
         = entrant.name_first
       %td

@@ -92,6 +92,12 @@
           = f.text_field :address_zip_code
 
       %hr/
+
+      -# ID
+      .control-group
+        = f.label :id, "ID", :class => 'control-label'
+        .controls
+          = f.text_field :id, :disabled => true
       
       -# CARD_NUMBER
       .control-group
