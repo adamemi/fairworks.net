@@ -8,4 +8,8 @@ class Category < ActiveRecord::Base
   def name_with_department
     "#{number} - #{department.name} : #{name}"
   end
+
+  def name_with_number
+    "#{number} - #{name}"
+  end
 end

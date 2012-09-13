@@ -7,17 +7,17 @@
       - @win.errors.full_messages.each do |msg|
         = msg
 
-  -# ENTRANT
-  .control-group
-    = f.label :entrant_id, "Entrant", :class => 'control-label'
-    .controls
-      = f.collection_select :entrant_id, Entrant.all, :id, :full_name, :class => 'first'
-
   -# CATEGORY
   .control-group
     = f.label :category_id, "Category", :class => 'control-label'
     .controls
-      = f.collection_select :category_id, Category.all, :id, :name
+      = f.collection_select :category_id, Category.order('number'), :id, :name_with_number, :class => 'first'
+
+  -# ENTRANT
+  .control-group
+    = f.label :entrant_id, "Entrant", :class => 'control-label'
+    .controls
+      = f.collection_select :entrant_id, Entrant.order('id'), :id, :full_name
 
   -# PRIZE
   .control-group

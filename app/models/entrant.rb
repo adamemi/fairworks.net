@@ -9,6 +9,10 @@ class Entrant < ActiveRecord::Base
     "#{self.name_first} #{self.name_middle} #{self.name_last}"
   end
 
+  def full_name_with_id
+    "#{self.id} - #{self.name_first} #{self.name_middle} #{self.name_last}"
+  end
+
   def name_last_first
     "#{self.name_last}, #{self.name_first} #{self.name_middle}"
   end

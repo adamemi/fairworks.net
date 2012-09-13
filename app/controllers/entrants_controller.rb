@@ -2,7 +2,11 @@ class EntrantsController < ApplicationController
   # GET /entrants
   # GET /entrants.json
   def index
-    @entrants = Entrant.all
+    if params[:show_all] == "true"
+      @entrants = Entrant.all
+    else
+      @entrants = Entrant.where(:for_year => 2012)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
