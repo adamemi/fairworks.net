@@ -4,6 +4,14 @@
 .well{ :class => 'well-small' }
   = link_to "New Entrant", new_entrant_path, :class => 'btn btn-primary'
 
+%ul{ :class => "nav nav-pills" }
+
+  %li{ :class => "#{'active' if params[:show_all].nil?}" }
+    = link_to "2012", entrants_path
+
+  %li{ :class => "#{'active' if params[:show_all] == 'true'}" }
+    = link_to "All", entrants_path({ :show_all => "true" })
+
 %table{ :class => 'table table-condensed table-striped table-bordered table-clickable' }
   %tr
     %th ID
