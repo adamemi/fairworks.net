@@ -16,16 +16,16 @@ class Checks < Prawn::Document
 
         text "<font size='12'>THIS CHECK <u>MUST</u> BE CASHED BY <b>#{cash_by}</b>        <b>CHECK #{counter}</b></font>", :inline_format => true
         
-        move_down 253 # move down
+        move_down 270 # move down
         
         # print amount of money
         if entrant.wins_total*1.00 > 100.00
-          text "#{currency_to_words(entrant.wins_total*1.00)}                  #{Date.today}        $#{Money.new(entrant.wins_total*100.00)}"
+          text "#{currency_to_words(entrant.wins_total*1.00)}                           #{Date.today}        $#{Money.new(entrant.wins_total*100.00)}"
         else
-          text "#{currency_to_words(entrant.wins_total*1.00)}                        #{Date.today}         $#{Money.new(entrant.wins_total*100.00)}"
+          text "#{currency_to_words(entrant.wins_total*1.00)}                                 #{Date.today}         $#{Money.new(entrant.wins_total*100.00)}"
         end
         
-        move_down 50 # move down
+        move_down 35 # move down
         
         # print address
         text "#{entrant.full_name}"
