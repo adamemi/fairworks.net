@@ -12,20 +12,20 @@ class Checks < Prawn::Document
       entrants.each do |entrant|
 
         font_size 10
-        move_down 40 # move down 15
+        move_down 40 # move down
 
         text "<font size='12'>THIS CHECK <u>MUST</u> BE CASHED BY <b>DECEMBER 31, 2012</b>        <b>CHECK #{counter}</b></font>", :inline_format => true
         
-        move_down 253 # move down 15
+        move_down 253 # move down
         
         # print amount of money
         if entrant.wins_total*1.00 > 100.00
-          text "#{currency_to_words(entrant.wins_total*1.00)}             #{Date.today}        $#{Money.new(entrant.wins_total*100.00)}"
+          text "#{currency_to_words(entrant.wins_total*1.00)}                  #{Date.today}        $#{Money.new(entrant.wins_total*100.00)}"
         else
-          text "#{currency_to_words(entrant.wins_total*1.00)}                   #{Date.today}         $#{Money.new(entrant.wins_total*100.00)}"
+          text "#{currency_to_words(entrant.wins_total*1.00)}                        #{Date.today}         $#{Money.new(entrant.wins_total*100.00)}"
         end
         
-        move_down 30 # move down 15
+        move_down 50 # move down
         
         # print address
         text "#{entrant.full_name}"
@@ -35,7 +35,7 @@ class Checks < Prawn::Document
         end
         text "#{entrant.address_city}, #{entrant.address_state} #{entrant.address_zip_code}"
         
-        move_down 97 # move down 20
+        move_down 97 # move down
         font_size 7
         
         table = []
