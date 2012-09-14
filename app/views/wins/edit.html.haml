@@ -3,5 +3,6 @@
 
 .well{ :class => 'well-small' }
   = link_to "Back to Wins", wins_path, :class => 'btn'
+  = link_to "Delete", win_path(@win), :method => :delete, :class => 'btn btn-danger'
 
 = render 'form'
