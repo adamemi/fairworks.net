@@ -1,6 +1,29 @@
 %h2
   Reports
 
-%hr/
+%br/
+%br/
+%br/
 
-= link_to "Download Checks", { :action => :checks }, :class => 'btn btn-primary'
+.row
+  .span6
+    %h4 Download Checks
+
+    %hr/
+
+    = form_tag(url_for(:action => :download_checks), :method => :post, :class => 'form-horizontal') do
+
+      .control-group
+        = label_tag :cash_by, "Cash By (written date)", :class => 'control-label'
+        .controls
+          = text_field_tag :cash_by
+
+      .control-group
+        = label_tag :starting_number, "Check Number", :class => 'control-label'
+        .controls
+          = text_field_tag :starting_number
+
+      .form-actions
+        = submit_tag "Download Checks", :class => 'btn btn-primary'
+
+  .span6

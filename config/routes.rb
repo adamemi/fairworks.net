@@ -8,7 +8,7 @@ FairworksCom::Application.routes.draw do
   resources :entrants
 
   resources :reports, :only => [:index]
-  match 'reports/checks' => 'reports#checks'
+  match 'reports/download_checks' => 'reports#download_checks'
 
   resources :users
   resources :wins

@@ -1,6 +1,6 @@
 class Checks < Prawn::Document
   
-  def to_pdf(starting_check)
+  def to_pdf(starting_check, cash_by)
     counter = starting_check
     font "Courier"
     
@@ -14,7 +14,7 @@ class Checks < Prawn::Document
         font_size 10
         move_down 40 # move down
 
-        text "<font size='12'>THIS CHECK <u>MUST</u> BE CASHED BY <b>DECEMBER 31, 2012</b>        <b>CHECK #{counter}</b></font>", :inline_format => true
+        text "<font size='12'>THIS CHECK <u>MUST</u> BE CASHED BY <b>#{cash_by}</b>        <b>CHECK #{counter}</b></font>", :inline_format => true
         
         move_down 253 # move down
         
