@@ -33,7 +33,7 @@ class Entrant < ActiveRecord::Base
 
   def wins_total
     total = BigDecimal.new("0")
-    wins.each do |w|
+    self.wins.each do |w|
       total = total + w.prize.amount.cents
     end
     total.div(100.00)
@@ -41,7 +41,7 @@ class Entrant < ActiveRecord::Base
   
   def wins_total_as_cents
     total = BigDecimal.new("0")
-    wins.each do |w|
+    self.wins.each do |w|
       total = total + w.prize.amount.cents
     end
     total

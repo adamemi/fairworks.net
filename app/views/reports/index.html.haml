@@ -26,4 +26,32 @@
       .form-actions
         = submit_tag "Download Checks", :class => 'btn btn-primary'
 
-  .span6
+  .span1
+
+  .span5
+    %h4 Statistics
+
+    %hr/
+
+    - total = Money.new(0)
+    - Win.all.each do |w|
+      - total += w.prize.amount
+    
+    %table{ :class => "table table-striped table-condensed table-bordered" }
+      %tr
+        %td{ :class => 'span2', :style => 'text-align: center;' }
+          = "$#{total}"
+        %td
+          given in wins
+
+      %tr
+        %td{ :style => 'text-align: center;' }
+          = Win.all.count
+        %td
+          wins this year
+
+      %tr
+        %td{ :style => 'text-align: center;' }
+          = Entrant.where(:for_year => 2012).count
+        %td
+          total entrants
