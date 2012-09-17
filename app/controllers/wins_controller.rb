@@ -1,4 +1,7 @@
 class WinsController < ApplicationController
+
+  require 'csv'
+
   # GET /wins
   # GET /wins.json
   def index
@@ -74,5 +77,21 @@ class WinsController < ApplicationController
       format.html { redirect_to wins_url }
       format.json { head :no_content }
     end
+  end
+
+  def download
+    report = StringIO.new
+
+    CSV::Writer.generate(report, ',') do |title|
+      title << ['Win Id','Entrant Id','Entrant Name','Ticket Number','Category Number','Category Name','Prize']
+      
+      Win.all.each do |win|
+        title << [win.id, win.entrant.id, win.entrant.full_name, win.ticket_number, win.category.number, win.category.name, win.prize.name]
+      end
+    end
+
+    report.rewind
+
+    send_data(report.read,:type => 'text/csv;charset=iso-8859-1;', :filename => "wins-#{Date.today.to_s}.csv", :disposition => 'attachment', :encoding => 'utf8')
   end
 end

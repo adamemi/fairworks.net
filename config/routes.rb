@@ -10,8 +10,10 @@ FairworksCom::Application.routes.draw do
   resources :reports, :only => [:index]
   match 'reports/download_checks' => 'reports#download_checks'
 
-  resources :users
+  match 'wins/download' => 'wins#download', :as => "download_wins"
   resources :wins
+
+  resources :users
   resources :prizes
   resources :categories
   resources :departments
