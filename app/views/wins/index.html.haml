@@ -13,8 +13,8 @@
   - @wins.each do |win|
     %tr{ :onclick => "location.href='#{ edit_win_path(win) }'" }
       %td
-        = win.entrant.full_name
+        = "#{win.entrant.id} - #{win.entrant.full_name}"
       %td
-        = win.category.name
+        = "#{win.category.id} - #{win.category.name}"
       %td
         = win.prize.name
