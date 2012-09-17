@@ -7,6 +7,7 @@
 %table{ :class => 'table table-condensed table-striped table-bordered table-clickable' }
   %tr
     %th Entrant
+    %th Ticket
     %th Category
     %th Prize
 
@@ -14,6 +15,8 @@
     %tr{ :onclick => "location.href='#{ edit_win_path(win) }'" }
       %td
         = "#{win.entrant.id} - #{win.entrant.full_name}"
+      %td
+        = win.ticket_number
       %td
         = "#{win.category.number} - #{win.category.name}"
       %td
