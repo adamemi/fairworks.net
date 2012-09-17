@@ -23,7 +23,13 @@
   .control-group
     = f.label :prize_id, "Prize", :class => 'control-label'
     .controls
-      = f.collection_select :prize_id, Prize.all, :id, :name
+      = f.collection_select :prize_id, Prize.order("name"), :id, :name
+
+  -# TICKET NUMBER
+  .control-group
+    = f.label :ticket_number, "Ticket Number", :class => 'control-label'
+    .controls
+      = f.text_field :ticket_number
 
   .form-actions
     = f.submit "Save", :class => 'btn btn-primary'

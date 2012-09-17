@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120912201457) do
+ActiveRecord::Schema.define(:version => 20120917021312) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -73,8 +73,9 @@ ActiveRecord::Schema.define(:version => 20120912201457) do
     t.integer  "entrant_id"
     t.integer  "category_id"
     t.integer  "prize_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "ticket_number"
   end
 
 end
