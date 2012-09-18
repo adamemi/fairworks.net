@@ -42,7 +42,7 @@ class WinsController < ApplicationController
 
     respond_to do |format|
       if @win.save
-        format.html { redirect_to edit_win_path(@win), :notice => 'Win was successfully created.' }
+        format.html { redirect_to root_path, :notice => 'Win was successfully created.' }
         format.json { render :json => @win, :status => :created, :location => @win }
       else
         format.html { render :action => "new" }
