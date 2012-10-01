@@ -3,9 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '~> 3.2.8'
 
 # torquebox
-gem "torquebox", "2.1.1"
-gem "torquebox-rake-support", "2.1.1"
-gem "torquebox-capistrano-support", "2.1.1"
+gem "torquebox", "2.1.2"
+gem "torquebox-rake-support", "2.1.2"
 gem 'jruby-openssl'
 
 # assets
@@ -24,6 +23,7 @@ gem 'linguistics'
 
 group :development do
   gem 'activerecord-jdbcsqlite3-adapter'
+  gem "torquebox-capistrano-support", "2.1.2"
 end
 
 group :production do
